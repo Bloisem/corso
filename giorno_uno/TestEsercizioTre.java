@@ -16,7 +16,7 @@ public class TestEsercizioTre {
 		
 		esercizioTre.setNumeroInserito(num);
 		
-		System.out.println(esercizioTre.numeriPrimi());
+		System.out.println(esercizioTre.verificaNumeroPrimo());
 
 		
 
