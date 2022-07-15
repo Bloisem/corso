@@ -18,6 +18,9 @@ public class TestEsercizioQuattro {
 		
 		String result = esercizioQuattro.divisoriPositivi();
 		System.out.println(result);
+		
+		
+		
 
 	}
 
