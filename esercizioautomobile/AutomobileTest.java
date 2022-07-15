@@ -24,6 +24,8 @@ public class AutomobileTest {
 		System.out.println(focus.toString());
 		System.out.println(juke.toString());
 		System.out.println(fiesta.toString());
+		
+		System.out.println(juke.differenzaPrezzo(focus.getPrezzo()));
 
 	}
 

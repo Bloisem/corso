@@ -45,4 +45,12 @@ public class Automobile {
 		String str = marca + " " + modello +": "+ "prezzo " + prezzo;
 		return str;
 	}
+	public String differenzaPrezzo(int a) {
+		
+		int i = 0;
+		i = a-prezzo;
+		String	str = "La differenza é : " +i; 
+		
+		return str;
+	}
 }
