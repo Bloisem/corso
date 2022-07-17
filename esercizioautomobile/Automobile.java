@@ -49,8 +49,7 @@ public class Automobile {
 		
 		int i = 0;
 		i =Math.abs(a-prezzo);
-		String	str = "La differenza é : " +i; 
-		
+		String	str = "La differenza é : " +i; 	
 		return str;
 	}
 }
