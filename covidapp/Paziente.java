@@ -42,7 +42,10 @@ public class Paziente {
 	}
 
 	public void setTosse(boolean tosse) {
-		this.tosse = tosse == true ? true : false;
+		if(tosse == true){
+			this.tosse =true;
+		}
+		
 
 	}
 
@@ -52,11 +55,15 @@ public class Paziente {
 	}
 
 	public void setStanghezza(boolean stanghezza) {
-		this.stanghezza = stanghezza == true ? true : false;
+		if (stanghezza == true){
+			this.stanghezza=true;
+		}
 	}
 
 	public void setDifficoltaRespiratoria(boolean difficoltaRespiratoria) {
-		this.difficoltaRespiratoria = difficoltaRespiratoria == true ? true : false;
+		if(difficoltaRespiratoria == true){
+			this.difficoltaRespiratoria = true;
+		}		
 	}
 
 	public boolean diagnosi(Paziente paziente) {
