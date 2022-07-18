@@ -11,9 +11,12 @@ public class EsercizioQuattro {
 		System.out.println("Inserisci una frase");
 
 		String myStr = sc.nextLine();
-		StringBuilder myStringResult = new StringBuilder(myStr);
-		StringBuilder result = myStringResult.reverse();
-		System.out.println(result);
+		
+		
+		
+		for (int i= myStr.length()-1;i>=0; i--) {
+			System.out.print(myStr.charAt(i));
+		}
 
 	}
 
