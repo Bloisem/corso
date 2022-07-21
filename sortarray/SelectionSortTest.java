@@ -9,7 +9,7 @@ public class SelectionSortTest {
 		
 		//elaborazione
 		SelectionSort sortSelectionArray = new SelectionSort();
-		int [] resultArray =sortSelectionArray.selectionSort(startArray, false);
+		int [] resultArray =sortSelectionArray.selectionSort(startArray, false); //crescente true, decrescente false
 		sortSelectionArray.printArray(resultArray);
 
 	}
