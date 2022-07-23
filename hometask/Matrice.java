@@ -2,19 +2,29 @@ package hometask;
 
 public class Matrice {
 	
-	
+	//create matrix with 2 arrays
 	public int[][] createMatrice(int[] arrayFirst, int[] arraySecond) {
 		int [][]arrayResult = new int[arrayFirst.length][arraySecond.length];
 		for (int i= 0;i<arrayFirst.length;i++) {
 			for(int j= 0; j<arraySecond.length; j++) {
 				arrayResult[i][j] = arrayFirst[i]*arraySecond[j];
-				System.out.print(arrayResult[i][j]+" ");
 			}
-			System.out.println();
 		}
 		
 	return arrayResult;
 	}
+	
+	//print matrix	
+		public void toString(int[][] matrix){
+			for (int i = 0; i < matrix.length; i++) {
+				for (int j = 0; j < matrix[i].length; j++) {
+					System.out.print(matrix[i][j] + " ");
+				}
+				System.out.println();
+			}
+		}
+	
+	//max min in line of matrix
 	public void maxMinMatrixLine(int[][]arrayResult) {
 		for (int i= 0;i<arrayResult.length;i++) {
 			int min = arrayResult[i][0];
@@ -55,6 +65,36 @@ public class Matrice {
 		
 		return arrayResult;
 	}
-		
+	
+	/*Given a square matrix of numbers. Write a program 
+	 * that mirrors its elements about the horizontal axis of symmetry	
+	 */
+	public int[][] mirrorMatrixHorizontalAxis(int[][] startMatrix)
+	{
+		for (int i = 0;i<startMatrix.length/2;i++)
+		{
+			for (int j= 0; j<startMatrix[i].length; j++) {
+					int temp = startMatrix[i][j];
+					startMatrix[i][j]= startMatrix[startMatrix.length-1-i][j];
+					startMatrix[startMatrix.length-1-i][j]=temp;
+			}
+		}
+		return startMatrix;
+	}
+	/*
+	 * Write a program that rotates a square matrix of numbers by 90 clockwise.
+	 */
+	public int[][] rotate90clockwise(int[][] startMatrix)
+	{
+		for (int i = 0;i<startMatrix.length;i++)
+		{
+			for (int j= 0; j<startMatrix[i].length; j++) {
+					int temp = startMatrix[i][j];
+					startMatrix[i][j]= startMatrix[startMatrix.length-1-i][startMatrix.length-1-j];
+					startMatrix[startMatrix.length-1-i][startMatrix.length-1-j]=temp;
+			}
+		}
+		return startMatrix;
+	}
+	
 }
-
