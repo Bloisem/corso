@@ -64,15 +64,14 @@ public class Car {
 	}
 	public double drive(Car car) {
 		if(percorso-kmPercorsi<0) {
-			System.out.println("Errore, con la tua quantità di carburante non puio fare solo" + percorso+ " km");
+			System.out.println("Errore, con la tua quantità di carburante puio fare solo" + percorso + " km");
 			percorso = 0;
 			quantitaCarburante=0;
 		}
-		percorso -=kmPercorsi;
-		if(percorso<0) {
-			System.out.println();
+		else {
+			percorso -=kmPercorsi;
+			quantitaCarburante=percorso/resaCarburante;
 		}
-		quantitaCarburante=percorso/resaCarburante;
 		return (quantitaCarburante);
 		
 	}

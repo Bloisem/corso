@@ -21,28 +21,35 @@ public class CarTest {
 		// TODO Auto-generated method stub
 
 		Car car = new Car(23.0, 55);
-		//carica di carburante
+		// carica di carburante
 		boolean rispostaCarburante = true;
 		while (rispostaCarburante) {
 			System.out.println("Quanti litri vuoi mettere in serbatoio? ");
 			double quantitaCarburante = new Scanner(System.in).nextDouble();
 			car.addCarburante(quantitaCarburante);
-			if(car.getQuantitaCarburante() > car.getSerbatoio()) {
+			if (car.getQuantitaCarburante() > car.getSerbatoio()) {
 				car.setQuantitaCarburante(car.getSerbatoio());
-				System.out.println("Il serbatoio è di " + car.getSerbatoio()+ " litri  e puoi percorrere " + car.getPercorso() + " km");				
+				System.out.println("Il serbatoio è di " + car.getSerbatoio() + " litri  e puoi percorrere "
+						+ car.getPercorso() + " km");
 				break;
 			}
-			System.out.println("Hai caricato " + quantitaCarburante + " litri e puoi percorrere " + car.getPercorso() + " km");
+			System.out.println(
+					"Hai caricato " + quantitaCarburante + " litri e puoi percorrere " + car.getPercorso() + " km");
 			System.out.println("Vuoi aggiungere ancora carburante? Rispondi true o false");
 			rispostaCarburante = new Scanner(System.in).nextBoolean();
 		}
-		boolean rispostaKm=true;
-		//finire ciclo
-		System.out.println("Kilometri percorsi: ");
-		car.setKmPercorsi(new Scanner(System.in).nextDouble());
-		car.drive(car);
-		System.out.println("Hai fatto " + car.getKmPercorsi() + " km, il carburante rimasto é: " + car.getQuantitaCarburante() + " litri, e puoi fare ancora "+ car.getPercorso()+" km");
+		//km percorsi
+		boolean rispostaKm = true;
+		while (rispostaKm) {
+			System.out.println("Kilometri percorsi: ");
+			car.setKmPercorsi(new Scanner(System.in).nextDouble());
+			car.drive(car);
+			System.out.println("Hai fatto " + car.getKmPercorsi() + " km, il carburante rimasto é: "
+					+ car.getQuantitaCarburante() + " litri, e puoi fare ancora " + car.getPercorso() + " km");
+			System.out.println("Aggiungere atri kilometri percorsi? Rispondi true o false");
+			rispostaKm = new Scanner(System.in).nextBoolean();
 
+		}
 	}
 	
 	
