@@ -11,7 +11,4 @@ public class RandomElementWeightTest {
 		System.out.println(newElement.numberFromArray());
 
 	}
-
-	
-
 }
