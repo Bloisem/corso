@@ -1,5 +1,5 @@
 package harb;
-
+//https://habr.com/ru/post/440436/
 public class RandomElementWeightTest {
 
 	public static void main(String[] args) {
