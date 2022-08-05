@@ -78,5 +78,12 @@ public class Airplane {
 		return fluel;
 	}
 
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return producer+", "+year+", "+ weight +", "+fluel;
+	}
+
 	
 }
