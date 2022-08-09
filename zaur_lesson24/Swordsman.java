@@ -17,11 +17,6 @@ public class Swordsman extends Fish{
 		System.out.println("Меченосец ест корм");
 		
 	}
-	public static void main(String[] args) {
-		Swordsman fish = new Swordsman("Гарри");
-		fish.eat();
-		fish.sleep();
-		fish.swim();
-	}
+	
 
 }
