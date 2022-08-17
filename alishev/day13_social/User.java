@@ -25,7 +25,8 @@ public class User {
 	}
 
 	public void subscribe(User user) {
-		subscriptions.add(user);
+		if(!isSubscribe(user))
+		{subscriptions.add(user);}
 
 	}
 
