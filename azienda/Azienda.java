@@ -20,7 +20,7 @@ public class Azienda {
 		aggiungiImpiegato(file);
 
 	}
-	//getter setter
+	// getter setter
 
 	public int getNumeroImpiegati() {
 		return numeroImpiegati;
@@ -29,7 +29,7 @@ public class Azienda {
 	public void setNumeroImpiegati(int numeroImpiegati) {
 		this.numeroImpiegati = numeroImpiegati;
 	}
-	
+
 	public String getRagioneSociale() {
 		return ragioneSociale;
 	}
@@ -120,8 +120,13 @@ public class Azienda {
 				listaImpiegatiResult[count++] = listaImpiegati[i];
 			}
 		}
-		numeroImpiegati--;
-		listaImpiegati = listaImpiegatiResult;
+		if(numeroImpiegati==count) {
+			System.out.println("Codice fiscale non è presente nella lista");
+		}
+		else {
+			numeroImpiegati=count;
+			listaImpiegati = listaImpiegatiResult;
+		}
 
 	}
 
@@ -129,14 +134,14 @@ public class Azienda {
 		System.out.println("Inserisci la somma di aumento : ");
 		int somma = new Scanner(System.in).nextInt();
 		capitaleSociale += somma;
-		System.out.println("Il capitale è "+ this.capitaleSociale);
+		System.out.println("Il capitale è " + this.capitaleSociale);
 	}
 
 	private void diminuireCapitale() {
 		System.out.println("Inserisci la somma di diminuzione : ");
 		int somma = new Scanner(System.in).nextInt();
 		capitaleSociale -= somma;
-		System.out.println("Il capitale è "+ this.capitaleSociale);
+		System.out.println("Il capitale è " + this.capitaleSociale);
 	}
 
 	@Override

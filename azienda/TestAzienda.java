@@ -7,8 +7,14 @@ import java.util.Scanner;
 public class TestAzienda {
 	public static void main(String[] args) throws FileNotFoundException {
 		File file = new File("impiegati.txt");
-		Azienda azienda = new Azienda("SNC", "PI1111111111", 100_000, file);
+		Azienda azienda1 = new Azienda("SNC", "PI1111111111", 100_000, file);
+		selectFunction(azienda1);
+		Azienda azienda2 = new Azienda("SSA", "PI1111111112", 100_020, file);
+		selectFunction(azienda2);
 
+	}
+
+	private static void selectFunction(Azienda azienda) {
 		while (true) {
 			System.out.println("Inserischi: \n1- per stampare i dati dell'azienda; "
 					+ "\n2- per aggiungere un impiegato; " + "\n3- per rimuovere un impiegato; "
@@ -25,7 +31,6 @@ public class TestAzienda {
 			}
 
 		}
-
 	}
 
 }
