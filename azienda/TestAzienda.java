@@ -1,4 +1,4 @@
-package azienda;
+  package azienda;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -14,7 +14,7 @@ public class TestAzienda {
 
 	}
 
-	private static void selectFunction(Azienda azienda) {
+	private static void selectFunction(Azienda azienda)  {
 		while (true) {
 			System.out.println("Inserischi: \n1- per stampare i dati dell'azienda; "
 					+ "\n2- per aggiungere un impiegato; " + "\n3- per rimuovere un impiegato; "

@@ -10,13 +10,13 @@ public class Azienda {
 	private String partitaIva;
 	private int capitaleSociale;
 	private int numeroImpiegati;
-	private Impiegato[] listaImpiegati = new Impiegato[30];
+	private Impiegato[] listaImpiegati;
 
 	public Azienda(String ragioneSociale, String partitaIva, int capitaleSociale, File file) {
 		this.ragioneSociale = ragioneSociale;
 		this.partitaIva = partitaIva;
 		this.capitaleSociale = capitaleSociale;
-		this.listaImpiegati = new Impiegato[100];
+		this.listaImpiegati = new Impiegato[5];
 		aggiungiImpiegato(file);
 
 	}
@@ -85,6 +85,10 @@ public class Azienda {
 			while (sc.hasNextLine()) {
 				String[] impiegato = sc.nextLine().split(" ");
 				Impiegato impiegato1 = new Impiegato(impiegato[0], impiegato[1], impiegato[2]);
+				if (numeroImpiegati + 1 > listaImpiegati.length) {
+					listaImpiegati = aumentaArray();
+				}
+
 				listaImpiegati[numeroImpiegati] = impiegato1;
 				numeroImpiegati++;
 			}
@@ -102,6 +106,9 @@ public class Azienda {
 		System.out.println("Aggiungi un nuovo impiegato: nome, cognome, codice fiscale ");
 		String[] impiegato = new Scanner(System.in).nextLine().split(" ");
 		Impiegato impiegato1 = new Impiegato(impiegato[0], impiegato[1], impiegato[2]);
+		if (numeroImpiegati + 1 > listaImpiegati.length) {
+			listaImpiegati = aumentaArray();
+		}
 		listaImpiegati[numeroImpiegati++] = impiegato1;
 		System.out.println(impiegato[0] + " " + impiegato[1] + " è stato aggiunto alla lista");
 	}
@@ -109,7 +116,6 @@ public class Azienda {
 	private void eliminaImpiegato() {
 		System.out.println("Aggiungi il codice fiscale dell'impiegato da eliminare: ");
 		String codiceFiscale = new Scanner(System.in).nextLine();
-		Impiegato[] listaImpiegatiResult = new Impiegato[numeroImpiegati];
 		int count = 0;
 		for (int i = 0; i < numeroImpiegati; i++) {
 			if (listaImpiegati[i].getCodiceFiscale().equals(codiceFiscale)) {
@@ -117,15 +123,14 @@ public class Azienda {
 						+ " è stato eliminato dalla lista");
 
 			} else {
-				listaImpiegatiResult[count++] = listaImpiegati[i];
+				listaImpiegati[count++] = listaImpiegati[i];
 			}
 		}
-		if(numeroImpiegati==count) {
+		if (numeroImpiegati == count) {
 			System.out.println("Codice fiscale non è presente nella lista");
-		}
-		else {
-			numeroImpiegati=count;
-			listaImpiegati = listaImpiegatiResult;
+		} else {
+			numeroImpiegati = count;
+
 		}
 
 	}
@@ -143,7 +148,14 @@ public class Azienda {
 		capitaleSociale -= somma;
 		System.out.println("Il capitale è " + this.capitaleSociale);
 	}
+	private Impiegato[] aumentaArray() {
+		Impiegato[] result = new Impiegato[listaImpiegati.length * 2];
+		for (int i = 0; i < listaImpiegati.length; i++) {
+			result[i] = listaImpiegati[i];
+		}
+		return result;
 
+	}
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
