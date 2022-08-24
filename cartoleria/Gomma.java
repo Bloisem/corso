@@ -20,6 +20,13 @@ public class Gomma extends Articolo {
 	public String getForma() {
 		return forma;
 	}
+	public void setDimensione(String dimensione) {
+		this.dimensione = dimensione;
+	}
+
+	public void setForma(String forma) {
+		this.forma = forma;
+	}
 
 	@Override
 	public String toString() {
@@ -30,7 +37,7 @@ public class Gomma extends Articolo {
 			builder.append(", modello=");
 			builder.append(this.getModello());
 			builder.append(", costo=");
-			builder.append(this.getPrezzo());
+			builder.append(this.getCosto());
 			builder.append("dimensione=");
 			builder.append(dimensione);
 			builder.append(", forma=");
@@ -41,4 +48,6 @@ public class Gomma extends Articolo {
 			return builder.toString();
 		}
 	}
+
+	
 }

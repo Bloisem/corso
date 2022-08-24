@@ -14,7 +14,9 @@ public class Magazzino implements FunzioniMagazzino{
 
 	public void caricamentoArticoli(Object ...art) {
 		for(Object a:art) {
-			articoli.add((Articolo)a);
+			if(a instanceof Articolo) {
+				articoli.add((Articolo)a);
+			}
 		}
 		
 	}

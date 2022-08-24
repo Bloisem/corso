@@ -27,5 +27,14 @@ public abstract class Articolo {
 	public void setPrezzo(double prezzo) {
 		this.prezzo = prezzo;
 	}
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+	public void setModello(String modello) {
+		this.modello = modello;
+	}
+	public void setCosto(double costo) {
+		this.costo = costo;
+	}
 	
 }

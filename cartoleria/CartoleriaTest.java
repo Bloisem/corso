@@ -22,6 +22,12 @@ public class CartoleriaTest {
 		magazzino2.articoliPresenti();
 		magazzino2.stampaRicaviTotali();
 		magazzino2.stampaCostiTotali();
+		
+		Magazzino magazzino3 = new Magazzino("Buffe");
+		magazzino3.caricamentoArticoli();
+		magazzino3.articoliPresenti();
+		magazzino3.stampaRicaviTotali();
+		magazzino3.stampaCostiTotali();
 
 	}
 

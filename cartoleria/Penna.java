@@ -12,6 +12,10 @@ public class Penna extends Articolo{
 	public String getColore() {
 		return colore;
 	}
+	public void setColore(String colore) {
+		this.colore = colore;
+	}
+	
 
 
 	@Override
@@ -33,5 +37,6 @@ public class Penna extends Articolo{
 		}
 		
 	}
+
 	
 }
