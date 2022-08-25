@@ -7,7 +7,6 @@ public class GiocoCarteTest {
 		Giocatore giocatore2 = new Giocatore("Mumin");
 		Gioco gioco1 = new Gioco(giocatore1, giocatore2);
 		gioco1.estrareCarte();
-		
 
 	}
 

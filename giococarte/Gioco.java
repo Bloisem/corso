@@ -32,8 +32,6 @@ public class Gioco {
 		this.giocatore2 = giocatore2;
 	}
 
-	
-
 	public void estrareCarte() {
 		int count = 1;
 		for (int i = 0; i < mazzoCarte.size() - 1; i += 2) {
@@ -42,27 +40,24 @@ public class Gioco {
 				if (mazzoCarte.get(i).getSemeCarta().ordinal() < mazzoCarte.get(i + 1).getSemeCarta().ordinal()) {
 					stampaRisultato(i, giocatore1);
 					giocatore1.setPunteggio(giocatore1.getPunteggio() + 1);
-					stampaTotale();
 
 				} else {
 					stampaRisultato(i, giocatore2);
 					giocatore2.setPunteggio(giocatore2.getPunteggio() + 1);
-					stampaTotale();
 
 				}
 			} else {
 				if (mazzoCarte.get(i).getValoreCarta().ordinal() > mazzoCarte.get(i + 1).getValoreCarta().ordinal()) {
 					stampaRisultato(i, giocatore1);
 					giocatore1.setPunteggio(giocatore1.getPunteggio() + 1);
-					stampaTotale();
 
 				} else {
 					stampaRisultato(i, giocatore2);
 					giocatore2.setPunteggio(giocatore2.getPunteggio() + 1);
-					stampaTotale();
 
 				}
 			}
+			stampaTotale();
 		}
 		verificaVincitore();
 	}
@@ -80,9 +75,7 @@ public class Gioco {
 		Collections.shuffle(mazzoCarte);
 
 	}
-	
-	
-	
+
 	private void stampaRisultato(int i, Giocatore giocatore) {
 		System.out.println(giocatore1.getName() + " ha estrato " + mazzoCarte.get(i).getSemeCarta().name() + " "
 				+ mazzoCarte.get(i).getValoreCarta().name());
@@ -100,9 +93,11 @@ public class Gioco {
 		if (giocatore1.getPunteggio() == giocatore2.getPunteggio()) {
 			System.out.println("\nPareggio");
 		} else if (giocatore1.getPunteggio() > giocatore2.getPunteggio()) {
-			System.out.println("\nIl gioco ha vinto " + giocatore1.getName() + " con " + giocatore1.getPunteggio() + " punti");
+			System.out.println(
+					"\nIl gioco ha vinto " + giocatore1.getName() + " con " + giocatore1.getPunteggio() + " punti");
 		} else {
-			System.out.println("\nIl gioco ha vinto " + giocatore2.getName() + " con " + giocatore2.getPunteggio() + " punti");
+			System.out.println(
+					"\nIl gioco ha vinto " + giocatore2.getName() + " con " + giocatore2.getPunteggio() + " punti");
 		}
 	}
 
