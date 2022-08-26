@@ -25,4 +25,13 @@ public class Carta {
 		this.valoreCarta = valoreCarta;
 	}
 
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append(valoreCarta);
+		builder.append(" di ");
+		builder.append(semeCarta);
+		return builder.toString();
+	}
+
 }
