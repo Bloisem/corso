@@ -1,9 +1,5 @@
 package linkedlist;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class LinkedListMy {
 	private Item first;
 	private Item last;
@@ -13,14 +9,13 @@ public class LinkedListMy {
 		if (size == 0) {
 			first = new Item(value);
 			last = first;
-			size++;
 		} else {
 			Item item = new Item(value);
 			last.setNext(item);
 			item.setPrevious(last);
 			last = item;
-			size++;
 		}
+		size++;
 
 	}
 
@@ -45,7 +40,32 @@ public class LinkedListMy {
 
 	}
 
-	public Item remove(int index) {
+
+	public Item getFirst() {
+		return first;
+	}
+
+	public void setFirst(Item first) {
+		this.first = first;
+	}
+
+	public Item getLast() {
+		return last;
+	}
+
+	public void setLast(Item last) {
+		this.last = last;
+	}
+
+	public int getSize() {
+		return size;
+	}
+
+	public void setSize(int size) {
+		this.size = size;
+	}
+
+	public int remove(int index) {
 		Item temp = get(index);
 		if (temp.getPrevious() == null) {
 			first = temp.getNext();
@@ -55,7 +75,7 @@ public class LinkedListMy {
 			size--;
 		}
 
-		return temp;
+		return temp.getValue();
 	}
 
 	public int size() {

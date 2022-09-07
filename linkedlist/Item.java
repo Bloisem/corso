@@ -6,20 +6,19 @@ public class Item {
 	private Item previous;
 
 	Item(int value) {
-		this.value=value;
+		this.value = value;
 
 	}
-	
 
-	 Item getNext() {
+	Item getNext() {
 		return next;
 	}
 
-	 void setNext(Item next) {
+	void setNext(Item next) {
 		this.next = next;
 	}
 
-	 int getValue() {
+	int getValue() {
 		return value;
 	}
 
@@ -27,14 +26,13 @@ public class Item {
 		return previous;
 	}
 
-	 void setPrevious(Item previous) {
+	void setPrevious(Item previous) {
 		this.previous = previous;
 	}
-
 
 	@Override
 	public String toString() {
 		return Integer.toString(value);
 	}
-	
+
 }
