@@ -8,9 +8,9 @@ import java.util.Random;
 public class Test {
 
 	public static void main(String[] args) {
-		Queue queue = new Queue();
+		Queue <String>queue = new Queue<>();
 		for (int i = 0; i < 10; i++) {
-			queue.add(i + 10);
+			queue.add("i" + i);
 		}
 		System.out.println("Queue size " +queue.size());
 		for (int i = 0; i < 9; i++) {
@@ -20,7 +20,7 @@ public class Test {
 		queue.get();
 		queue.get();
 //---------------------------------------------------------------------
-		Stack stack = new Stack();
+		Stack<Integer> stack = new Stack<>();
 		
 		for (int i = 0; i < 1_000_000; i++) {
 			stack.add(i);
@@ -33,12 +33,11 @@ public class Test {
 		long finishTime = System.nanoTime() - currentTime;
 		System.out.println(finishTime + "    " + stack.size());
 //---------------------------------------------------------------------
-		List<Integer> myArrayList = new ArrayList<>();
+		List<String> myArrayList = new ArrayList<>();
 		
 		for (int i = 0; i <= 1_000_000; i++) {
-			myArrayList.add(i);
+			myArrayList.add("i" + i);
 		}
-		
 		System.out.println(myArrayList.size());
 		long currentTime2 = System.nanoTime();
 		for (int i = 1_000_000; i > 0; i--) {

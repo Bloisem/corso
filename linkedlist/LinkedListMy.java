@@ -1,11 +1,11 @@
 package linkedlist;
 
-public class LinkedListMy {
+public class LinkedListMy <T> {
 	private Item first;
 	private Item last;
 	private int size;
 
-	public void add(int value) {
+	public void add(T value) {
 		if (size == 0) {
 			first = new Item(value);
 			last = first;
@@ -18,29 +18,7 @@ public class LinkedListMy {
 		size++;
 
 	}
-
-	public Item get(int index) {
-		if (size > 0) {
-			int count = 0;
-			Item temp = first;
-			while (true) {
-				if (index > size - 1) {
-					throw new NullPointerException();
-				} else if (count == index) {
-					return temp;
-				} else {
-					temp = temp.getNext();
-					count++;
-				}
-
-			}
-		} else {
-			throw new NullPointerException();
-		}
-
-	}
-
-
+	
 	public Item getFirst() {
 		return first;
 	}
@@ -61,12 +39,9 @@ public class LinkedListMy {
 		return size;
 	}
 
-	public void setSize(int size) {
-		this.size = size;
-	}
-
-	public int remove(int index) {
-		Item temp = get(index);
+	public T remove(int index) {
+		Item temp = getHelper(index);
+		T result = (T) temp.getValue();
 		if (temp.getPrevious() == null) {
 			first = temp.getNext();
 			size--;
@@ -75,7 +50,30 @@ public class LinkedListMy {
 			size--;
 		}
 
-		return temp.getValue();
+		return result;
+	}
+	public T get(int index) {
+		return (T) getHelper(index).getValue();
+	}
+	private Item getHelper(int index) {
+		if (size > 0) {
+			int count = 0;
+			Item temp = first;
+			while (true) {
+				if (index > size - 1) {
+					throw new NullPointerException();
+				} else if (count == index) {
+					return temp;
+				} else {
+					temp = temp.getNext();
+					count++;
+				}
+
+			}
+		} else {
+			throw new NullPointerException();
+		}
+
 	}
 
 	public int size() {
@@ -87,15 +85,14 @@ public class LinkedListMy {
 		first = last = null;
 	}
 
-	public int[] toArray() {
+	public T[] toArray() {
 		Item temp = first;
-		int[] result = new int[size];
+		Object [] result = new Object[size];
 		for (int i = 0; i < size; i++) {
 			if (temp != null)
 				result[i] = temp.getValue();
 			temp = temp.getNext();
 		}
-		return result;
+		return (T[])result;
 	}
-
 }

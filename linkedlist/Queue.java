@@ -1,11 +1,11 @@
 package linkedlist;
 
-public class Queue {
+public class Queue <T>{
 	private Item first;
 	private int size;
-	LinkedListMy myLinkedList = new LinkedListMy();
+	LinkedListMy <T>myLinkedList = new LinkedListMy<>();
 
-	public void add(int element) {
+	public void add(T element) {
 		if (first == null) {
 			myLinkedList.add(element);
 			first = myLinkedList.getFirst();
@@ -14,14 +14,14 @@ public class Queue {
 		size++;
 	}
 
-	public int get() {
+	public T get() {
 		if (first.getNext() != null) {
 			first = first.getNext();
 			size--;
-			return first.getValue();
+			return (T) first.getValue();
 		} else {
 			System.out.println("Item with this index don't exist");
-			return -1;
+			return null;
 		}
 	}
 

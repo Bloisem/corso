@@ -1,11 +1,11 @@
 package linkedlist;
 
-public class Item {
+ class Item <T>{
 	private Item next;
-	private int value;
+	private T value;
 	private Item previous;
 
-	Item(int value) {
+	Item(T value) {
 		this.value = value;
 
 	}
@@ -18,7 +18,7 @@ public class Item {
 		this.next = next;
 	}
 
-	int getValue() {
+	T getValue() {
 		return value;
 	}
 
@@ -32,7 +32,9 @@ public class Item {
 
 	@Override
 	public String toString() {
-		return Integer.toString(value);
+		return value.toString();
 	}
+
+	
 
 }
